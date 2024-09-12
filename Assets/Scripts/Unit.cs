@@ -9,6 +9,11 @@ public class Unit : MonoBehaviour
     private float rotationSpeed = 10f;
     private Vector3 targetPosition;
 
+    private void Awake()
+    {
+        targetPosition = transform.position;
+    }
+
     private void Update()
     {
         PollUnitMovement();
