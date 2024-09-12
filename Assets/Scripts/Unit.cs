@@ -11,21 +11,12 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
-        PollMouseInput();
         PollUnitMovement();
     }
 
-    private void Move(Vector3 targetPosition)
+    public void Move(Vector3 targetPosition)
     {
         this.targetPosition = targetPosition;
-    }
-
-    private void PollMouseInput()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Move(MouseWorld.GetPosition());
-        }
     }
 
     private void PollUnitMovement()
