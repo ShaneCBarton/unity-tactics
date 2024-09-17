@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742b69675f78cfa409a6eb8557fe425c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridDebugObjectPrefab: {fileID: 8097938533887773653, guid: a834a3b6e72567547a9d3a6b98b0ad10,
+    type: 3}
 --- !u!4 &172260159
 Transform:
   m_ObjectHideFlags: 0
@@ -253,8 +255,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.09499634, y: 0.89318705, z: -0.22456025, w: -0.37784296}
-  m_LocalPosition: {x: 7.4690456, y: 6.67404, z: 7.8301888}
+  m_LocalRotation: {x: -0.30439675, y: 0.0048560803, z: -0.0015598853, w: -0.9525317}
+  m_LocalPosition: {x: 9.705975, y: 10.95006, z: -7.3890896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
