@@ -43,4 +43,10 @@ public class LevelGrid : MonoBehaviour
     {
         return grid.GetGridPosition(worldPosition);
     }
+
+    public void UnitMovedGridPosition(Unit unit, GridPosition fromPosition, GridPosition toPosition)
+    {
+        ClearUnitAtGridPosition(fromPosition);
+        SetUnitAtGridPosition(toPosition, unit);
+    }
 }

@@ -26,9 +26,11 @@ public class Unit : MonoBehaviour
         PollUnitMovement();
 
         GridPosition newGridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+
         if (newGridPosition != gridPosition)
         {
-
+            LevelGrid.Instance.UnitMovedGridPosition(this, gridPosition, newGridPosition);
+            gridPosition = newGridPosition;
         }
     }
 
