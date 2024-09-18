@@ -8,6 +8,7 @@ public class Unit : MonoBehaviour
     private float stoppingDistance = .1f;
     private float rotationSpeed = 10f;
     private Vector3 targetPosition;
+    private GridPosition gridPosition;
 
     private void Awake()
     {
@@ -16,13 +17,19 @@ public class Unit : MonoBehaviour
 
     private void Start()
     {
-        GridPosition gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+        gridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
         LevelGrid.Instance.SetUnitAtGridPosition(gridPosition, this);
     }
 
     private void Update()
     {
         PollUnitMovement();
+
+        GridPosition newGridPosition = LevelGrid.Instance.GetGridPosition(transform.position);
+        if (newGridPosition != gridPosition)
+        {
+
+        }
     }
 
     public void Move(Vector3 targetPosition)
