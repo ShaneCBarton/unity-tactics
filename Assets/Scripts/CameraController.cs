@@ -8,6 +8,15 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
 
+    private Vector3 targetFollowOffset;
+    private CinemachineTransposer transposer;
+
+    private void Start()
+    {
+        transposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+        targetFollowOffset = transposer.m_FollowOffset;
+    }
+
     void Update()
     {
         Vector3 inputMoveDirection = new Vector3(0, 0, 0);
@@ -45,19 +54,18 @@ public class CameraController : MonoBehaviour
         float rotationSpeed = 100f;
         transform.eulerAngles += rotationVector * rotationSpeed * Time.deltaTime;
 
-        CinemachineTransposer transposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
-
-        Vector3 followOffset = transposer.m_FollowOffset;
         float zoomAmount = 1f;
         if (Input.mouseScrollDelta.y > 0)
         {
-            followOffset.y -= zoomAmount;
+            targetFollowOffset.y -= zoomAmount;
         }       
         if (Input.mouseScrollDelta.y < 0)
         {
-            followOffset.y += zoomAmount;
+            targetFollowOffset.y += zoomAmount;
         }
-        followOffset.y = Mathf.Clamp(followOffset.y, MIN_FOLLOW_OFFSET, MAX_FOLLOW_OFFSET);
-        transposer.m_FollowOffset = followOffset;
+
+        float zoomSpeed = 5f;
+        targetFollowOffset.y = Mathf.Clamp(targetFollowOffset.y, MIN_FOLLOW_OFFSET, MAX_FOLLOW_OFFSET);
+        transposer.m_FollowOffset = Vector3.Slerp(transposer.m_FollowOffset, targetFollowOffset, Time.deltaTime * zoomSpeed);
     }
 }
