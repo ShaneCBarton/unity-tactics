@@ -1,13 +1,19 @@
 using UnityEngine;
+using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
+    private const float MIN_FOLLOW_OFFSET = 2f;
+    private const float MAX_FOLLOW_OFFSET = 12f;
+
+    [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+
     void Update()
     {
         Vector3 inputMoveDirection = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.W))
         {
-            inputMoveDirection.z = +1f;
+            inputMoveDirection.z = 1f;
         }       
         if (Input.GetKey(KeyCode.S))
         {
@@ -19,7 +25,7 @@ public class CameraController : MonoBehaviour
         }        
         if (Input.GetKey(KeyCode.D))
         {
-            inputMoveDirection.x = +1f;
+            inputMoveDirection.x = 1f;
         }
 
         float moveSpeed = 10f;
@@ -29,7 +35,7 @@ public class CameraController : MonoBehaviour
         Vector3 rotationVector = new Vector3(0, 0, 0);
         if (Input.GetKey(KeyCode.Q))
         {
-            rotationVector.y = +1f;
+            rotationVector.y = 1f;
         }
         if (Input.GetKey(KeyCode.E))
         {
@@ -38,5 +44,20 @@ public class CameraController : MonoBehaviour
 
         float rotationSpeed = 100f;
         transform.eulerAngles += rotationVector * rotationSpeed * Time.deltaTime;
+
+        CinemachineTransposer transposer = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>();
+
+        Vector3 followOffset = transposer.m_FollowOffset;
+        float zoomAmount = 1f;
+        if (Input.mouseScrollDelta.y > 0)
+        {
+            followOffset.y -= zoomAmount;
+        }       
+        if (Input.mouseScrollDelta.y < 0)
+        {
+            followOffset.y += zoomAmount;
+        }
+        followOffset.y = Mathf.Clamp(followOffset.y, MIN_FOLLOW_OFFSET, MAX_FOLLOW_OFFSET);
+        transposer.m_FollowOffset = followOffset;
     }
 }
