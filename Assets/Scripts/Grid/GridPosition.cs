@@ -42,4 +42,15 @@ public struct GridPosition : IEquatable<GridPosition>
     { 
         return !(left == right);
     }
+
+    public static GridPosition operator +(GridPosition left, GridPosition right)
+    {
+        return new GridPosition(left.x + right.x, left.z + right.z);
+    }
+
+    public static GridPosition operator -(GridPosition left, GridPosition right)
+    {
+        return new GridPosition(left.x - right.x, left.z - right.z);
+    }
+
 }

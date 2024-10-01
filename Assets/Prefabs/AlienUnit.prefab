@@ -1960,8 +1960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01893baeb86829942968e8d13a92e355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  unitAnimator: {fileID: 1325483813936424912}
 --- !u!65 &5837400207944071233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1995,6 +1993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c8e4735631a3e46b9ff5ade67cc65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitAnimator: {fileID: 1325483813936424912}
+  moveSpeed: 5
+  maxMoveDistance: 4
 --- !u!1 &7225200535632291865
 GameObject:
   m_ObjectHideFlags: 0
