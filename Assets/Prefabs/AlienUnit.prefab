@@ -1897,6 +1897,7 @@ GameObject:
   - component: {fileID: 1325483813936424912}
   - component: {fileID: 7459444929003643433}
   - component: {fileID: 5837400207944071233}
+  - component: {fileID: 8300520357262852165}
   m_Layer: 7
   m_Name: AlienUnit
   m_TagString: Untagged
@@ -1982,6 +1983,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.43161684, y: 1.7042937, z: 0.529822}
   m_Center: {x: 0.015823692, y: 0.8607917, z: -0.022791743}
+--- !u!114 &8300520357262852165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158207621027730103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c8e4735631a3e46b9ff5ade67cc65a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7225200535632291865
 GameObject:
   m_ObjectHideFlags: 0

@@ -684,6 +684,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1483821334 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1325483813936424912, guid: fe0b8841dbef3714e93016133b62bf12,
+    type: 3}
+  m_PrefabInstance: {fileID: 5182499510731535040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623455091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,6 +1198,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienUnit
       objectReference: {fileID: 0}
+    - target: {fileID: 8300520357262852165, guid: fe0b8841dbef3714e93016133b62bf12,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300520357262852165, guid: fe0b8841dbef3714e93016133b62bf12,
+        type: 3}
+      propertyPath: unitAnimator
+      value: 
+      objectReference: {fileID: 1483821334}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
