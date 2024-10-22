@@ -1898,6 +1898,7 @@ GameObject:
   - component: {fileID: 7459444929003643433}
   - component: {fileID: 5837400207944071233}
   - component: {fileID: 8300520357262852165}
+  - component: {fileID: 7605419032476199468}
   m_Layer: 7
   m_Name: AlienUnit
   m_TagString: Untagged
@@ -1996,6 +1997,18 @@ MonoBehaviour:
   unitAnimator: {fileID: 1325483813936424912}
   moveSpeed: 5
   maxMoveDistance: 4
+--- !u!114 &7605419032476199468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158207621027730103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b312727ea4bd3d48ab6d47983262b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7225200535632291865
 GameObject:
   m_ObjectHideFlags: 0

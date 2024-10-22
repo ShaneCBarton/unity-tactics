@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class MoveAction : MonoBehaviour
+public class MoveAction : BaseAction
 {
     [SerializeField] private Animator unitAnimator;
     [SerializeField] private float moveSpeed;
@@ -11,25 +10,27 @@ public class MoveAction : MonoBehaviour
     private float rotationSpeed = 10f;
     private Vector3 targetPosition; 
     private float stoppingDistance = .1f;
-    private Unit unit;
 
-    private void Awake()
+    protected override void Awake()
     {
-        unit = GetComponent<Unit>();
+        base.Awake();
         targetPosition = transform.position;
     }
 
     private void Update()
     {
-        PollUnitMovement();
+        if (isActive)
+        {
+            PollUnitMovement();
+        }
     }
 
     private void PollUnitMovement()
     {
+        Vector3 moveDirection = (targetPosition - transform.position).normalized;
+
         if (Vector3.Distance(transform.position, targetPosition) > stoppingDistance)
         {
-            Vector3 moveDirection = (targetPosition - transform.position).normalized;
-            transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * rotationSpeed);
             transform.position += moveDirection * Time.deltaTime * moveSpeed;
 
             unitAnimator.SetBool("IsWalking", true);
@@ -37,12 +38,16 @@ public class MoveAction : MonoBehaviour
         else
         {
             unitAnimator.SetBool("IsWalking", false);
+            isActive = false;
         }
+
+        transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * rotationSpeed);
     }
 
     public void Move(GridPosition gridPosition)
     {
         this.targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition);
+        isActive = true;
     }
 
     public bool IsValidActionGridPosition(GridPosition gridPosition)
