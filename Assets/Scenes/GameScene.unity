@@ -601,6 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248357326}
   - component: {fileID: 1248357325}
+  - component: {fileID: 1248357327}
   m_Layer: 0
   m_Name: LevelGrid
   m_TagString: Untagged
@@ -637,6 +638,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248357327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248357324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6801192dfd7fded43b89f0e54c6c457f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSystemVisualSinglePrefab: {fileID: 4949605023552487023, guid: 1ec6e4653979c754ea70c383c5660c24,
+    type: 3}
 --- !u!1 &1369095885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,11 +1208,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlienUnit
       objectReference: {fileID: 0}
-    - target: {fileID: 8300520357262852165, guid: fe0b8841dbef3714e93016133b62bf12,
-        type: 3}
-      propertyPath: maxMoveDistance
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1208,6 +1218,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 1164299464}
+  - {fileID: 1769580646}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 2108898173}
@@ -1217,5 +1229,3 @@ SceneRoots:
   - {fileID: 1658551210}
   - {fileID: 172260159}
   - {fileID: 1248357326}
-  - {fileID: 1164299464}
-  - {fileID: 1769580646}

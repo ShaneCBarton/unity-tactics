@@ -49,6 +49,10 @@ public class LevelGrid : MonoBehaviour
         return grid.GetWorldPosition(gridPosition);
     }
 
+    public int GetWidth() { return grid.GetWidth(); }
+
+    public int GetHeight() {  return grid.GetHeight(); }
+
     public bool IsValidGridPosition(GridPosition gridPosition)
     {
         return grid.IsValidGridPosition(gridPosition);
