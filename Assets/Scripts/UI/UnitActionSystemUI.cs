@@ -10,7 +10,7 @@ public class UnitActionSystemUI : MonoBehaviour
 
     private void Start()
     {
-        UnitManager.Instance.OnSelectedUnitChanged += UnitActionSystem_OnSelectedUnitChanged;
+        UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnSelectedUnitChanged;
         CreateUnitActionButtons();
     }
 
@@ -20,7 +20,7 @@ public class UnitActionSystemUI : MonoBehaviour
         {
             Destroy(button.gameObject);
         }
-        Unit selectedUnit = UnitManager.Instance.GetSelectedUnit();
+        Unit selectedUnit = UnitActionSystem.Instance.GetSelectedUnit();
 
         foreach (BaseAction baseAction in selectedUnit.GetBaseActionArray())
         {

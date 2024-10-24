@@ -8,7 +8,7 @@ public class UnitSelectedHighlight : MonoBehaviour
 
     private void Start()
     {
-        UnitManager.Instance.OnSelectedUnitChanged += UnitManager_OnSelectedUnitChanged;
+        UnitActionSystem.Instance.OnSelectedUnitChanged += UnitManager_OnSelectedUnitChanged;
         UpdateVisual();
     }
 
@@ -19,7 +19,7 @@ public class UnitSelectedHighlight : MonoBehaviour
 
     private void UpdateVisual()
     {
-        if (UnitManager.Instance.GetSelectedUnit() == unit)
+        if (UnitActionSystem.Instance.GetSelectedUnit() == unit)
         {
             lightShaft.SetActive(true);
         } else
