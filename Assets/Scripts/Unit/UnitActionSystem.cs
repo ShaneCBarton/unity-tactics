@@ -37,6 +37,7 @@ public class UnitActionSystem : MonoBehaviour
     private void Update()
     {
         if (isBusy) { return; }
+        if (!TurnSystem.Instance.IsPlayerTurn()) { return; }
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if (TryHandleUnitSelection()) { return; }
 
