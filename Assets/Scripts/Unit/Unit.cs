@@ -7,6 +7,8 @@ public class Unit : MonoBehaviour
 
     public static event EventHandler OnAnyActionPointsChanged;
 
+    [SerializeField] private bool isEnemy;
+
     private GridPosition gridPosition;
     private MoveAction moveAction;
     private SpinAction spinAction;
@@ -80,4 +82,6 @@ public class Unit : MonoBehaviour
         OnAnyActionPointsChanged?.Invoke(this, EventArgs.Empty);
 
     }
+
+    public bool IsEnemy() { return isEnemy; }
 }
