@@ -192,3 +192,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 200
   trailRenderer: {fileID: 61267726786756456}
+  bulletImpactEffectPrefab: {fileID: 5162746564149076370, guid: fb587de95b426e84ba6c58b4a0225713,
+    type: 3}
