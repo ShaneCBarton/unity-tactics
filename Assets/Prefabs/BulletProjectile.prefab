@@ -142,7 +142,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.01
   m_MaskInteraction: 0
-  m_Autodestruct: 0
+  m_Autodestruct: 1
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
 --- !u!1 &8012935775036191050
@@ -191,3 +191,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 200
+  trailRenderer: {fileID: 61267726786756456}

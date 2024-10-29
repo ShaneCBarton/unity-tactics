@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletProjectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 200f;
+    [SerializeField] private TrailRenderer trailRenderer;
 
     private Vector3 targetPosition;
 
@@ -18,6 +19,7 @@ public class BulletProjectile : MonoBehaviour
 
         if (distanceBeforeMoving < distanceAfterMoving)
         {
+            trailRenderer.transform.parent = null;
             Destroy(gameObject);
         }
     }
