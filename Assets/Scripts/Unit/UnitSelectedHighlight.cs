@@ -27,4 +27,10 @@ public class UnitSelectedHighlight : MonoBehaviour
             lightShaft.SetActive(false);
         }
     }
+
+    private void OnDestroy()
+    {
+        UnitActionSystem.Instance.OnSelectedUnitChanged -= UnitManager_OnSelectedUnitChanged;
+
+    }
 }

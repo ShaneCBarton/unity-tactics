@@ -53,8 +53,6 @@ public class ShootAction : BaseAction
                 break;
         }
 
-        Debug.Log(state);
-
         if (stateTimer <= 0f)
         {
             NextState();
@@ -80,7 +78,6 @@ public class ShootAction : BaseAction
                 ActionComplete();
                 break;
         }
-        Debug.Log(state);
     }
     private void Shoot()
     {
@@ -89,7 +86,7 @@ public class ShootAction : BaseAction
             targetUnit = this.targetUnit,
             shootingUnit = unit
         });
-        targetUnit.Damage();
+        targetUnit.Damage(40);
     }
 
     public override string GetActionName()
