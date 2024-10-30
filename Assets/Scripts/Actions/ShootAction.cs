@@ -21,7 +21,7 @@ public class ShootAction : BaseAction
         Cooldown
     }
 
-    private int maxShootDistance = 7;
+    private int maxShootDistance = 3;
     private State state;
     private float stateTimer;
     private Unit targetUnit;
