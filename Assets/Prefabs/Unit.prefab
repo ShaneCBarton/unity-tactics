@@ -1052,6 +1052,7 @@ GameObject:
   - component: {fileID: 8585955189582713065}
   - component: {fileID: 3678701313538932021}
   - component: {fileID: 190287679260531330}
+  - component: {fileID: 6296557449679048926}
   m_Layer: 7
   m_Name: UnitWorldUI
   m_TagString: Untagged
@@ -1156,6 +1157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionPointsText: {fileID: 6023534866351031212}
   unit: {fileID: 7459444929003643433}
+--- !u!114 &6296557449679048926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798103238012511612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167717b2ae78cb24d83e79a2f81b9a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 1
 --- !u!1 &3855285919554267872
 GameObject:
   m_ObjectHideFlags: 0
