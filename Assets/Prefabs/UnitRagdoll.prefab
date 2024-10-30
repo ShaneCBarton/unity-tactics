@@ -2765,6 +2765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6293694422225127011}
+  - component: {fileID: 3247188560363046544}
   m_Layer: 7
   m_Name: UnitRagdoll
   m_TagString: Untagged
@@ -2794,6 +2795,19 @@ Transform:
   - {fileID: 1100789303571629641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3247188560363046544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7158207621027730103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a38fd77eb0eff49987605f24dbe164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ragdollRootBone: {fileID: 5462511586299598498}
 --- !u!1 &7225200535632291865
 GameObject:
   m_ObjectHideFlags: 0

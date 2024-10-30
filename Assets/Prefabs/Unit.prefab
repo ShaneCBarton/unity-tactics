@@ -2099,6 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdollPrefab: {fileID: 6293694422225127011, guid: b49eb7833d81aed44abc26a0cd970715,
     type: 3}
+  originalRootBone: {fileID: 5462511586299598498}
 --- !u!1 &7225200535632291865
 GameObject:
   m_ObjectHideFlags: 0
