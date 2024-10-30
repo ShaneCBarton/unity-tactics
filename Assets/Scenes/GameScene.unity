@@ -1915,6 +1915,8 @@ MonoBehaviour:
   - gridVisualType: 2
     material: {fileID: 2100000, guid: 2379a3e80334ab94abf697c6cec9890b, type: 2}
   - gridVisualType: 3
+    material: {fileID: 2100000, guid: 7fb9cd2ac171f014f8548d0c34fb2534, type: 2}
+  - gridVisualType: 4
     material: {fileID: 2100000, guid: af024210cba474e4fa17b33b15409438, type: 2}
 --- !u!1 &1264427797
 GameObject:
