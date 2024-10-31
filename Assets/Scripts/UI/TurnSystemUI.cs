@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TurnSystemUI : MonoBehaviour
 {
     [SerializeField] private Button endTurnButton;
+    [SerializeField] private Button quitButton;
     [SerializeField] private TextMeshProUGUI turnNumberText;
     [SerializeField] private GameObject enemyTurnVisualGameObject;
 
@@ -16,6 +18,17 @@ public class TurnSystemUI : MonoBehaviour
         endTurnButton.onClick.AddListener(() =>
         {
             TurnSystem.Instance.NextTurn();
+        });
+
+        quitButton.onClick.AddListener(() =>
+        {
+            if (Application.isEditor)
+            {
+                EditorApplication.isPlaying = false;
+            } else
+            {
+                Application.Quit();
+            }
         });
 
         TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
