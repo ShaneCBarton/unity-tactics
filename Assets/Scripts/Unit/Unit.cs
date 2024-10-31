@@ -63,6 +63,8 @@ public class Unit : MonoBehaviour
 
     public BaseAction[] GetBaseActionArray() { return baseActionArray; }
 
+    public float GetHealthNormalized() {  return healthSystem.GetHealthNormalized(); }
+
     public bool TrySpendActionPointsToTakeAction(BaseAction baseAction)
     {
         if (CanSpendActionPointsToTakeAction(baseAction))
