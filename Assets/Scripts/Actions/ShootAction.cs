@@ -21,7 +21,7 @@ public class ShootAction : BaseAction
         Cooldown
     }
 
-    private int maxShootDistance = 3;
+    private int maxShootDistance = 7;
     private State state;
     private float stateTimer;
     private Unit targetUnit;
@@ -96,6 +96,12 @@ public class ShootAction : BaseAction
 
     public override List<GridPosition> GetValidActionGridPositionList()
     {
+        GridPosition unitGridPosition = unit.GetGridPosition();
+        return GetValidActionGridPositionList(unitGridPosition);
+    }
+
+    public List<GridPosition> GetValidActionGridPositionList(GridPosition gridPosition)
+    {
         List<GridPosition> validGridPositionList = new List<GridPosition>();
 
         GridPosition unitGridPosition = unit.GetGridPosition();
@@ -158,5 +164,19 @@ public class ShootAction : BaseAction
     public int GetMaxShootDistance()
     {
         return maxShootDistance;
+    }
+
+    public override EnemyAIAction GetEnemyAIAction(GridPosition gridPosition)
+    {
+        return new EnemyAIAction
+        {
+            gridPosition = gridPosition,
+            actionValue = 100,
+        };
+    }
+
+    public int GetTargetCountAtPosition(GridPosition gridPosition)
+    {
+        return GetValidActionGridPositionList(gridPosition).Count;
     }
 }
