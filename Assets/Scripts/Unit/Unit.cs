@@ -12,18 +12,12 @@ public class Unit : MonoBehaviour
     [SerializeField] private bool isEnemy;
 
     private GridPosition gridPosition;
-    private MoveAction moveAction;
-    private SpinAction spinAction;
-    private ShootAction shootAction;
     private BaseAction[] baseActionArray;
     private HealthSystem healthSystem;
     private int actionPoints = ACTION_POINTS_MAX;
 
     private void Awake()
     {
-        moveAction = GetComponent<MoveAction>();
-        spinAction = GetComponent<SpinAction>();
-        shootAction = GetComponent<ShootAction>();
         baseActionArray = GetComponents<BaseAction>();
         healthSystem = GetComponent<HealthSystem>();
     }
@@ -51,11 +45,18 @@ public class Unit : MonoBehaviour
             LevelGrid.Instance.UnitMovedGridPosition(this, gridPosition, newGridPosition);
         }
     }
-    public MoveAction GetMoveAction() { return moveAction; }
 
-    public SpinAction GetSpinAction() { return spinAction; }
-
-    public ShootAction GetShootAction() { return shootAction; }
+    public T GetAction<T>() where T : BaseAction
+    {
+        foreach(BaseAction action in baseActionArray)
+        {
+            if (action is T)
+            {
+                return (T)action;
+            }
+        }
+        return null;
+    }
 
     public GridPosition GetGridPosition() { return gridPosition; }
 

@@ -19,14 +19,7 @@ public class ButtonControl : MonoBehaviour
 
         quitButton.onClick.AddListener(() =>
         {
-            if (Application.isEditor)
-            {
-                EditorApplication.isPlaying = false;
-            }
-            else
-            {
-                Application.Quit();
-            }
+            Application.Quit();
         });
     }
 }

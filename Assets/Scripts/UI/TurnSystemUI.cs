@@ -22,13 +22,7 @@ public class TurnSystemUI : MonoBehaviour
 
         quitButton.onClick.AddListener(() =>
         {
-            if (Application.isEditor)
-            {
-                EditorApplication.isPlaying = false;
-            } else
-            {
-                Application.Quit();
-            }
+            Application.Quit();
         });
 
         TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
