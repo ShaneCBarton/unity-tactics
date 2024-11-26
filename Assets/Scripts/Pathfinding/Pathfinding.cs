@@ -11,6 +11,7 @@ public class Pathfinding : MonoBehaviour
     private const int MOVE_DIAGONAL_COST = 14;
 
     [SerializeField] private Transform gridDebugObjectPrefab;
+
     private int width;
     private int height;
     private float cellSize;
@@ -26,9 +27,20 @@ public class Pathfinding : MonoBehaviour
 
         Instance = this;
 
-        grid = new Grid<PathNode>(10, 10, 2f, 
+    }
+
+    public void Setup(int width, int height, float cellSize)
+    {
+        this.width = width;
+        this.height = height;
+        this.cellSize = cellSize;
+
+        grid = new Grid<PathNode>(width, height, cellSize, 
             (Grid<PathNode> gameObject, GridPosition gridPosition) => new PathNode(gridPosition));
         grid.CreateDebugObjects(gridDebugObjectPrefab);
+
+        GetNode(1, 0).SetIsWalkable(false);
+        GetNode(1, 1).SetIsWalkable(false);
     }
 
     public List<GridPosition> FindPath(GridPosition startPosition, GridPosition endPosition)
@@ -74,6 +86,12 @@ public class Pathfinding : MonoBehaviour
             {
                 if (closedList.Contains(neighbourNode))
                 {
+                    continue;
+                }
+
+                if (!neighbourNode.IsWalkable())
+                {
+                    closedList.Add(neighbourNode);
                     continue;
                 }
 

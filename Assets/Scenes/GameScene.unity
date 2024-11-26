@@ -2007,6 +2007,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridDebugObjectPrefab: {fileID: 8097938533887773653, guid: a834a3b6e72567547a9d3a6b98b0ad10,
     type: 3}
+  width: 10
+  height: 10
+  cellSize: 2
 --- !u!4 &1248357326
 Transform:
   m_ObjectHideFlags: 0
