@@ -49,7 +49,7 @@ public class MoveAction : BaseAction
 
     public override void TakeAction(GridPosition gridPosition, Action onActionComplete)
     {
-        List<GridPosition> pathGridPositionList = Pathfinding.Instance.FindPath(unit.GetGridPosition(), gridPosition);
+        List<GridPosition> pathGridPositionList = Pathfinding.Instance.FindPath(unit.GetGridPosition(), gridPosition, out int pathLength);
         currentPositionIndex = 0;
         positionList = new List<Vector3>();
 
@@ -98,6 +98,13 @@ public class MoveAction : BaseAction
 
                 if (!Pathfinding.Instance.HasPath(unitGridPosition, testgridPosition))
                 {
+                    continue;
+                }
+
+                int pathfindingDistanceMultiplier = 10;
+                if (Pathfinding.Instance.GetpathLength(unitGridPosition, testgridPosition) > maxMoveDistance * pathfindingDistanceMultiplier)
+                {
+                    //the path length is too long
                     continue;
                 }
 

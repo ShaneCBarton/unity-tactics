@@ -59,7 +59,7 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
-    public List<GridPosition> FindPath(GridPosition startPosition, GridPosition endPosition)
+    public List<GridPosition> FindPath(GridPosition startPosition, GridPosition endPosition, out int pathLength)
     {
         List<PathNode> openList = new List<PathNode>();
         List<PathNode> closedList = new List<PathNode>();
@@ -92,6 +92,7 @@ public class Pathfinding : MonoBehaviour
 
             if (currentNode == endNode)
             {
+                pathLength = endNode.GetFCost();
                 return CalculatePath(endNode);
             }
 
@@ -128,6 +129,7 @@ public class Pathfinding : MonoBehaviour
         }
 
         // no path
+        pathLength = 0;
         return null;
     }
     public int CalculateDistance(GridPosition gridPositionA, GridPosition gridPositionB)
@@ -240,6 +242,12 @@ public class Pathfinding : MonoBehaviour
 
     public bool HasPath(GridPosition startPosition, GridPosition endPosition)
     {
-        return FindPath(startPosition, endPosition) != null;
+        return FindPath(startPosition, endPosition, out int pathLength) != null;
+    }
+
+    public int GetpathLength(GridPosition startPosition, GridPosition endPosition)
+    {
+        FindPath(startPosition, endPosition, out int pathLength);
+        return pathLength;
     }
 }
