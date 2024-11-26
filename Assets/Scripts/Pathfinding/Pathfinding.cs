@@ -38,7 +38,7 @@ public class Pathfinding : MonoBehaviour
 
         grid = new Grid<PathNode>(width, height, cellSize, 
             (Grid<PathNode> gameObject, GridPosition gridPosition) => new PathNode(gridPosition));
-        grid.CreateDebugObjects(gridDebugObjectPrefab);
+        //grid.CreateDebugObjects(gridDebugObjectPrefab);
 
         for (int x = 0; x < width; x++)
         {
@@ -231,5 +231,15 @@ public class Pathfinding : MonoBehaviour
         }
 
         return gridPositions;
+    }
+
+    public bool IsWalkableGridPosition(GridPosition gridPosition)
+    {
+        return grid.GetGridObject(gridPosition).IsWalkable();
+    }
+
+    public bool HasPath(GridPosition startPosition, GridPosition endPosition)
+    {
+        return FindPath(startPosition, endPosition) != null;
     }
 }
