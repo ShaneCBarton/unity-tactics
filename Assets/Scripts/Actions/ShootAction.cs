@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class ShootAction : BaseAction
 {
+    [SerializeField] private AudioSource soundObj;
+
     public event EventHandler<OnShootEventArgs> OnShoot;
 
     public class OnShootEventArgs : EventArgs
@@ -88,6 +90,7 @@ public class ShootAction : BaseAction
             targetUnit = this.targetUnit,
             shootingUnit = unit
         });
+        soundObj.Play();
         targetUnit.Damage(40);
     }
 
